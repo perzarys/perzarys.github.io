@@ -1,4 +1,4 @@
 include: [".well-known"]
-theme: jekyll-theme-minimal
+theme: minima
 title: perzarys' page
 description: Bookmark this to keep an eye on my project updates!
