@@ -2,7 +2,7 @@ Welcome to my small space on the internet! I do some things here. Not a lot thou
 
 I work in Geoinformatics (M.Sc.) and Remote Sensing. You might know me from some digital privacy communities, like CalyxOS, where I'm also active as community moderator.
 
-Things I've done so here so far:
+Things I've done on here so far:
 
 - CalyOS-related things
     - [CalyxOS Version Lookup](https://perzarys.github.io/calyxos-version-lookup/)
