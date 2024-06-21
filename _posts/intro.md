@@ -1,12 +1,9 @@
 ---
-layout: page
-title: "about"
-permalink: /about
+layout: post
+title: "Introduction"
+date: 2024-06-21 15:40:00 +0200
+categories: INTRO
 ---
-
-# perzarys' page
-
-## Introduction
 Hi! I'm perzarys. Welcome to my small space on the internet! I do some things here. Not a lot though. Feel free to look around.
 
 I work in Geoinformatics (M.Sc.) and Remote Sensing. You might know me from some digital privacy communities, like CalyxOS, where I'm also active as community moderator.
