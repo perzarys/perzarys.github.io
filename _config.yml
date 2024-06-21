@@ -2,7 +2,5 @@ include: [".well-known"]
 theme: minima
 title: perzarys' page
 description: Bookmark this to keep an eye on my project updates!
-minima:
-  author:
-    name: John Smith
-    email: "john.smith@foobar.com"
+author: perzarys
+email: "perzarys@mailbox.org"
