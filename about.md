@@ -1,3 +1,7 @@
+layout: page
+title: "about"
+permalink: /about
+
 # perzarys' page
 
 ## Introduction
