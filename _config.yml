@@ -2,7 +2,8 @@ include: [".well-known"]
 remote_theme: jekyll/minima
 show_excerpts: true
 title: perzarys' page
-author: perzarys (he/him)
-email: "perzarys@mailbox.org"
+author: 
+  name: perzarys (he/him)
+  email: "perzarys@mailbox.org"
 minima:
   skin: dark
