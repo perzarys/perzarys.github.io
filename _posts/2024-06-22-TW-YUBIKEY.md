@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Use a YubiKey for desktop login and sudo in openSUSE Tumbleweed"
+title: "openSUSE Tumbleweed: Yubikey desktop login and sudo auth"
 tags: opensuse tumbleweed yubico yubikey
 categories: opensuse
 excerpt: Using your Yubikey as a way to get into your laptop? Sounds fun. 
