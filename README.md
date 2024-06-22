@@ -1,4 +1,4 @@
-<h2 class="post-list-heading">Hi!</h2>
+# Hi!
 
 Welcome to my small space on the internet! I do some things here. Not a lot though. Feel free to look around.
 
