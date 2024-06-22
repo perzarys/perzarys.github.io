@@ -7,3 +7,5 @@ author:
   email: "perzarys@mailbox.org"
 minima:
   skin: dark
+plugins:
+ - jekyll-feed
