@@ -6,6 +6,6 @@ author:
   name: perzarys (he/him)
   email: "perzarys@mailbox.org"
 minima:
-  skin: dark
+  skin: auto
 plugins:
  - jekyll-feed
