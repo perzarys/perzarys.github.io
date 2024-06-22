@@ -1,1 +1,13 @@
+---
+---
+/* Override theme defaults */
+$brand-color: #9ACA3C;
+
+/* load _sass/minima.scss */
 @import "minima";
+
+/* Put any custom CSS here */
+
+.site-header {
+    border-top: 0;
+}
