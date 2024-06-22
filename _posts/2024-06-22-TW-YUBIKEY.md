@@ -18,7 +18,9 @@ So I've decided to aggregate all the info I've found by scraping the internet an
 **Guide**
 
 1. Install necessary package.  
-`sudo zypper in pam_u2f`
+    ```
+    sudo zypper in pam_u2f
+    ```
 
 2. Create necessary directories. Here: for the current user and the root user. Root user is necessary for sudo auth. I'm caling the directories Yubico as I'm using Yubikeys, call them what you want, but make sure to keep your naming consistent everywhere.  
     ```
@@ -26,11 +28,15 @@ So I've decided to aggregate all the info I've found by scraping the internet an
     ```
 
 3. Public key generation. Insert your security key into a USB port now, before executing the below command.   
-`pamu2fcfg > ~/.config/Yubico/u2f_keys`  
-Touch the key after command execution, the command will return after you touched the key.
+    ```
+    pamu2fcfg > ~/.config/Yubico/u2f_keys
+    ```  
+    Touch the key after command execution, the command will return after you touched the key.
 
 4. If you have more than one key, remove your previously used key and insert the other key. Repeat with all your keys. Then, execute the following command to append the new public key to the file generated in 3.  
-`pamu2fcfg -n >> ~/.config/Yubico/u2f_keys`
+    ```
+    pamu2fcfg -n >> ~/.config/Yubico/u2f_keys
+    ```
 
 5. Enroll keys for the root user  
     ```
@@ -42,7 +48,8 @@ Touch the key after command execution, the command will return after you touched
     ```
     paste -sd '\n' /root/.config/Yubico/u2f_keys ~/.config/Yubico/u2f_keys > /etc/Yubico/u2f_keys
     ``` 
-Adapt the command if you have created keys for more users than just the current user and root, or if you have named the directory something else than `Yubico`. After line 2, we will insert our own pam config. Make sure the directory name is corrected, I’m sticking to `Yubico` here. The following line needs to be pasted:
+    
+    Adapt the command if you have created keys for more users than just the current user and root, or if you have named the directory something else than `Yubico`. After line 2, we will insert our own pam config. Make sure the directory name is corrected, I’m sticking to `Yubico` here. The following line needs to be pasted:
 
 7. At this step, open a new terminal window and switch to the root user. This will ensure that you'll still have root access to modify the pam config when something goes wrong.
 
@@ -56,7 +63,9 @@ Adapt the command if you have created keys for more users than just the current 
 If you have other non-root users you want to do this for, repeat step 3. and optionally 4. after switching to the respective user.
 
 Finally, edit `pam` configuration. Now, we're actually including the new auth method into the `pam` configuration. Use a text editor of your choice, I'll use `nano`.  
-`sudo nano /etc/pam.d/common-auth`
+    ```
+    sudo nano /etc/pam.d/common-auth
+    ```
 
 You will see these lines (ignore any comments in the file):
 
