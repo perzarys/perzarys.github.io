@@ -6,5 +6,5 @@ categories: opensuse
 excerpt: Using your Yubikey as a way to get into your laptop? Sounds fun. 
 ---
 
-> :warning: The steps to get this working are a bit tedious, and might not be perfectly following recommended practices. For me, these steps are reproducible and work perfectly fine with my two Yubikeys.  
+> ⚠️ The steps to get this working are a bit tedious, and might not be perfectly following recommended practices. For me, these steps are reproducible and work perfectly fine with my two Yubikeys.  
 
