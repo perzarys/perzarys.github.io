@@ -1,3 +1,5 @@
-$dm-link-base-color:       #9ACA3C;
 $link-base-color:       #9ACA3C;
+$dm-link-base-color:       #9ACA3C;
 $lm-link-base-color:       #79b8ff;
+$dm-link-visited-color:    darken($dm-link-base-color, 15%);
+$lm-link-visited-color:    darken($lm-link-base-color, 15%);
