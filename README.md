@@ -11,3 +11,5 @@ Things I've done on here so far:
     - [CalyxOS IMS Table](https://gist.github.com/perzarys/e97c1a19798e9b80ecdd5397b192e018)
 
 Otherwise, I will write very short text passages here every now and then. Probably about things that I noticed not yet having enough attention elsewhere on the internet.
+
+<h2 class="post-list-heading">Posts</h2>
