@@ -4,3 +4,5 @@ show_excerpts: true
 title: perzarys' page
 author: perzarys (he/him)
 email: "perzarys@mailbox.org"
+minima:
+  skin: dark
