@@ -1,6 +1,6 @@
 include: [".well-known"]
 theme: minima
 title: perzarys' page
-description: "You can reach me on Matrix at @perzarys:matrix.org Keyoxide: https://keyoxide.org/61FE4D7E8643BFB9786445F371F47198A9714286"
+description: "You can reach me on Matrix at @perzarys:matrix.org<br>Keyoxide: https://keyoxide.org/61FE4D7E8643BFB9786445F371F47198A9714286"
 author: perzarys (he/him)
 email: "perzarys@mailbox.org"
