@@ -2,6 +2,5 @@ include: [".well-known"]
 theme: minima
 show_excerpts: true
 title: perzarys' page
-description: "You can reach me on Matrix at @perzarys:matrix.org"
 author: perzarys (he/him)
 email: "perzarys@mailbox.org"
