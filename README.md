@@ -2,6 +2,8 @@
 
 Welcome to my small space on the internet! I do some things here. Not a lot though. Feel free to look around.
 
+Check the [About](https://perzarys.github.io/about/) page for contact information.
+
 Things I've done on here so far:
 
 - CalyxOS-related things
