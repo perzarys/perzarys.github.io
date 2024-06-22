@@ -1,5 +1,3 @@
-### Hi!
-
 Welcome to my small space on the internet! I do some things here. Not a lot though. Feel free to look around.
 
 Things I've done on here so far:
