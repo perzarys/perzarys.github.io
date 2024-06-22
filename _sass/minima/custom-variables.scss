@@ -7,6 +7,7 @@ $lm-link-visited-color:    darken($lm-link-base-color, 15%);
     :root {
         --minima-link-base-color: #{$dm-link-base-color};
         --minima-link-visited-color: #{$dm-link-visited-color};
+        --minima-link-hover-color: #{$dm-link-base-color};
     }
 }
 
@@ -14,5 +15,6 @@ $lm-link-visited-color:    darken($lm-link-base-color, 15%);
     :root {
         --minima-link-base-color: #{$lm-link-base-color};
         --minima-link-visited-color: #{$lm-link-visited-color};
+        --minima-link-hover-color: #{$lm-link-base-color};
     }
 }
