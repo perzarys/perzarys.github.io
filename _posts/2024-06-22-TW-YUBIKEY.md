@@ -8,3 +8,74 @@ excerpt: Using your Yubikey as a way to get into your laptop? Sounds fun.
 
 > ⚠️ The steps to get this working are a bit tedious, and might not be perfectly following recommended practices. For me, these steps are reproducible and work perfectly fine with my two Yubikeys.  
 
+> ⚠️ Read through the whole thing before copy pasting commands!
+
+After skimming through lots of Reddit posts and online forums, there didn't seem to be a fully-applicable and straightforward solution on how to enable 2FA for login and/or sudo authentification using hardware security tokens like Yubikeys specifically on Tumbleweed. Some guides for Ubuntu exist, but due to some differences in the `pam` module between Ubuntu and Tumbleweed, they are not 1:1 applicable. 
+
+So I've decided to aggregate all the info I've found by scraping the internet and share my minimalistic working solution here. The following steps will enable U2F for any login prompts on the CLI and in the GUI (tested with Gnome 45/46), as well as for `sudo`.
+
+
+**Guide**
+
+1. Install necessary package.  
+`sudo zypper in pam_u2f`
+
+2. Create necessary directories. Here: for the current user and the root user. Root user is necessary for sudo auth. I'm caling the directories Yubico as I'm using Yubikeys, call them what you want, but make sure to keep your naming consistent everywhere.  
+    ```
+    mkdir -p ~/.config/Yubico/ /root/.config/Yubico/ /etc/Yubico
+    ```
+
+3. Public key generation. Insert your security key into a USB port now, before executing the below command.   
+`pamu2fcfg > ~/.config/Yubico/u2f_keys`  
+Touch the key after command execution, the command will return after you touched the key.
+
+4. If you have more than one key, remove your previously used key and insert the other key. Repeat with all your keys. Then, execute the following command to append the new public key to the file generated in 3.  
+`pamu2fcfg -n >> ~/.config/Yubico/u2f_keys`
+
+5. Enroll keys for the root user  
+    ```
+    sudo pamu2fcfg > /root/.config/Yubico/u2f_keys
+    sudo pamu2fcfg -n >> /root/.config/Yubico/u2f_keys
+    ```
+
+6. Move all generated keys to a central file where only root has write access.  
+    ```
+    paste -sd '\n' /root/.config/Yubico/u2f_keys ~/.config/Yubico/u2f_keys > /etc/Yubico/u2f_keys
+    ``` 
+Adapt the command if you have created keys for more users than just the current user and root, or if you have named the directory something else than `Yubico`. After line 2, we will insert our own pam config. Make sure the directory name is corrected, I’m sticking to `Yubico` here. The following line needs to be pasted:
+
+7. At this step, open a new terminal window and switch to the root user. This will ensure that you'll still have root access to modify the pam config when something goes wrong.
+
+7. Re-organize `pam` configuration. Remove the symlink to `common-auth-pc` and copy the actual file contents of
+`common-auth-pc` to `common-auth`. This will prevent `common-auth` to be overridden in the future.  
+    ```
+    sudo rm /etc/pam.d/common-auth
+    sudo cp /etc/pam.d/common-auth-pc /etc/pam.d/common-auth
+    ```
+
+If you have other non-root users you want to do this for, repeat step 3. and optionally 4. after switching to the respective user.
+
+Finally, edit `pam` configuration. Now, we're actually including the new auth method into the `pam` configuration. Use a text editor of your choice, I'll use `nano`.  
+`sudo nano /etc/pam.d/common-auth`
+
+You will see these lines (ignore any comments in the file):
+
+```
+auth    required        pam_env.so      
+auth    optional        pam_gnome_keyring.so
+auth    required        pam_unix.so     try_first_pass
+```
+After line 2, we will insert our own pam config. Make sure the directory name is corrected, I'm sticking to `Yubico` here. The following line needs to be pasted:
+```
+auth    required        pam_u2f.so      authfile=/etc/Yubico/u2f_keys nouserok cue [cue_prompt=Waiting for U2F...]
+```
+
+The final result looks like this:
+```
+auth    required        pam_env.so      
+auth    optional        pam_gnome_keyring.so
+auth    required        pam_u2f.so      authfile=/etc/Yubico/u2f_keys nouserok cue [cue_prompt=Waiting for U2F...] 
+auth    required        pam_unix.so     try_first_pass
+```
+Save the config file. From now on, the new pam config is active.
+
