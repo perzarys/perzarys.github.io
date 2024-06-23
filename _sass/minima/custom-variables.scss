@@ -1,22 +1,26 @@
 $dm-link-base-color:   #DAF7A6;
 $dm-link-visited-color: darken($dm-link-base-color, 15%);
-
+$dm-background-color: #181818;
 @media (prefers-color-scheme: dark) {
     :root {
         --minima-link-base-color: #{$dm-link-base-color};
         --minima-link-visited-color: #{$dm-link-visited-color};
         --minima-link-hover-color: #{$dm-link-base-color};
+        --minima-background-color: #{$dm-background-color};
+
     }
 }
 
 /*
 $lm-link-base-color: #2a7ae2;
 $lm-link-visited-color: darken($lm-link-base-color, 15%);
+$lm-background-color: #fdfdfd;
 @media (prefers-color-scheme: light) {
     :root {
         --minima-link-base-color: #{$lm-link-base-color};
         --minima-link-visited-color: #{$lm-link-visited-color};
         --minima-link-hover-color: #{$lm-link-base-color};
+        --minima-background-color: #{$lm-background-color};
     }
 }
 */
