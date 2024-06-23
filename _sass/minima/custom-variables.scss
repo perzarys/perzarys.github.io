@@ -1,8 +1,5 @@
-/*
-$dm-link-base-color: #79b8ff;
-$lm-link-base-color: #2a7ae2;
+$dm-link-base-color:   #DAF7A6;
 $dm-link-visited-color: darken($dm-link-base-color, 15%);
-$lm-link-visited-color: darken($lm-link-base-color, 15%);
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -12,6 +9,9 @@ $lm-link-visited-color: darken($lm-link-base-color, 15%);
     }
 }
 
+/*
+$lm-link-base-color: #2a7ae2;
+$lm-link-visited-color: darken($lm-link-base-color, 15%);
 @media (prefers-color-scheme: light) {
     :root {
         --minima-link-base-color: #{$lm-link-base-color};
