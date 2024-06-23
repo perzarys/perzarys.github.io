@@ -1,4 +1,4 @@
-$dm-link-base-color:   #DAF7A6;
+$dm-link-base-color: #98FB98;
 // $dm-link-visited-color: darken($dm-link-base-color, 15%);
 $dm-link-visited-color: #{$dm-link-base-color};
 $dm-background-color: #181818;
@@ -8,7 +8,6 @@ $dm-background-color: #181818;
         --minima-link-visited-color: #{$dm-link-visited-color};
         --minima-link-hover-color: #{$dm-link-base-color};
         --minima-background-color: #{$dm-background-color};
-
     }
 }
 
